@@ -1,0 +1,1133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egaas Multi-Speciality Clinic – Dehradun's Trusted Family Healthcare</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #1a6fb0;
+            --primary-dark: #0d5590;
+            --secondary: #2dcc70;
+            --light: #f8f9fa;
+            --dark: #333;
+            --gray: #6c757d;
+            --light-gray: #e9ecef;
+            --shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            background-color: #fff;
+        }
+        
+        h1, h2, h3, h4, h5 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-icon {
+            color: var(--primary);
+            font-size: 2.5rem;
+            margin-right: 10px;
+        }
+        
+        .logo-text {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 700;
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+        
+        .logo-text span {
+            color: var(--secondary);
+        }
+        
+        .logo-subtext {
+            display: block;
+            font-size: 0.8rem;
+            color: var(--gray);
+            font-weight: 400;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 30px;
+        }
+        
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 1rem;
+        }
+        
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+        
+        .cta-button {
+            background-color: var(--primary);
+            color: white;
+            padding: 10px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.3s;
+        }
+        
+        .cta-button:hover {
+            background-color: var(--primary-dark);
+            color: white;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            background: none;
+            border: none;
+            color: var(--primary);
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.9)), url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2053&q=80');
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+        
+        .hero-text {
+            flex: 1;
+            padding-right: 40px;
+        }
+        
+        .hero-text h1 {
+            font-size: 2.8rem;
+            color: var(--primary-dark);
+            margin-bottom: 20px;
+        }
+        
+        .hero-text p {
+            font-size: 1.2rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+        
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        /* Services Section */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            color: var(--primary-dark);
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .services-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            background-color: var(--primary);
+            color: white;
+            font-size: 2.5rem;
+            padding: 25px;
+            text-align: center;
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            color: var(--primary-dark);
+            font-size: 1.5rem;
+        }
+        
+        /* Features Section */
+        .features {
+            background-color: var(--light-gray);
+        }
+        
+        .features-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature-item {
+            text-align: center;
+            padding: 30px 20px;
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+        
+        /* Appointment Section */
+        .appointment {
+            background-color: var(--primary);
+            color: white;
+            text-align: center;
+            padding: 60px 0;
+        }
+        
+        .appointment h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+        
+        .appointment p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Policy Pages */
+        .policy-container {
+            padding: 60px 20px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .policy-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .policy-header h1 {
+            color: var(--primary-dark);
+            font-size: 2.5rem;
+        }
+        
+        .policy-header .last-updated {
+            color: var(--gray);
+            font-style: italic;
+            margin-top: -10px;
+            margin-bottom: 20px;
+        }
+        
+        .policy-content {
+            background-color: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .policy-section {
+            margin-bottom: 30px;
+        }
+        
+        .policy-section h2 {
+            color: var(--primary);
+            font-size: 1.5rem;
+            border-bottom: 2px solid var(--light-gray);
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+        
+        .policy-section h3 {
+            color: var(--dark);
+            font-size: 1.2rem;
+            margin-top: 20px;
+        }
+        
+        .policy-section ul, .policy-section ol {
+            margin-left: 20px;
+            margin-bottom: 15px;
+        }
+        
+        .policy-section li {
+            margin-bottom: 8px;
+        }
+        
+        .back-button {
+            display: inline-block;
+            margin-top: 30px;
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .back-button:hover {
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+        }
+        
+        .footer-column h3 {
+            color: white;
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 3px;
+            background-color: var(--secondary);
+            bottom: -8px;
+            left: 0;
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 12px;
+        }
+        
+        .footer-column ul li a {
+            color: #bbb;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-column ul li a:hover {
+            color: white;
+        }
+        
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            color: #bbb;
+        }
+        
+        .contact-info li i {
+            margin-right: 10px;
+            color: var(--secondary);
+            margin-top: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 40px;
+            margin-top: 40px;
+            border-top: 1px solid #444;
+            color: #bbb;
+            font-size: 0.9rem;
+        }
+        
+        .legal-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        
+        .legal-links a {
+            color: #bbb;
+            text-decoration: none;
+        }
+        
+        .legal-links a:hover {
+            color: white;
+            text-decoration: underline;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero-content {
+                flex-direction: column;
+            }
+            
+            .hero-text {
+                padding-right: 0;
+                margin-bottom: 40px;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.4rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+            
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .header-container .cta-button {
+                display: none;
+            }
+            
+            .hero-text h1 {
+                font-size: 2rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .policy-content {
+                padding: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 60px 0;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .service-card {
+                margin-bottom: 20px;
+            }
+            
+            .legal-links {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <i class="fas fa-clinic-medical logo-icon"></i>
+                <div>
+                    <div class="logo-text">Egaas <span>Clinic</span></div>
+                    <div class="logo-subtext">Multi-Speciality Healthcare</div>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav>
+                <ul>
+                    <li><a href="#" onclick="showMainContent()">Home</a></li>
+                    <li><a href="#about" onclick="showMainContent()">About</a></li>
+                    <li><a href="#services" onclick="showMainContent()">Services</a></li>
+                    <li><a href="#contact" onclick="showMainContent()">Contact</a></li>
+                    <li><a href="#appointment" onclick="showMainContent()" class="cta-button">Book Appointment</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Main Content Area -->
+    <div id="main-content">
+        <!-- Hero Section -->
+        <section class="hero" id="home">
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>Dehradun's Trusted Family Healthcare</h1>
+                    <p>Egaas Multi-Speciality Clinic provides comprehensive healthcare services for your entire family. Our experienced team of doctors and modern facilities ensure you receive the best medical care in Dehradun.</p>
+                    <a href="#appointment" class="cta-button">Book Appointment Today</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://images.unsplash.com/photo-1586773860418-dc22f8b874bc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Modern clinic interior">
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section -->
+        <section class="section" id="services">
+            <div class="container">
+                <h2 class="section-title">Our Medical Services</h2>
+                <div class="services-container">
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Cardiology</h3>
+                            <p>Comprehensive heart care including ECG, stress tests, and preventive cardiology services for all ages.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-baby"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Pediatrics</h3>
+                            <p>Child healthcare, vaccinations, growth monitoring, and treatment for childhood illnesses.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-bone"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Orthopedics</h3>
+                            <p>Treatment for bone, joint, and muscle conditions with advanced diagnostic and therapeutic options.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Ophthalmology</h3>
+                            <p>Complete eye care including vision testing, glaucoma screening, and treatment for eye diseases.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-tooth"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Dentistry</h3>
+                            <p>Dental checkups, cleaning, fillings, root canals, and cosmetic dentistry for the whole family.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="service-card">
+                        <div class="service-icon">
+                            <i class="fas fa-x-ray"></i>
+                        </div>
+                        <div class="service-content">
+                            <h3>Diagnostics</h3>
+                            <p>Advanced laboratory tests, digital X-ray, ultrasound, and other diagnostic services on-site.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Features Section -->
+        <section class="section features" id="about">
+            <div class="container">
+                <h2 class="section-title">Why Choose Egaas Clinic?</h2>
+                <div class="features-container">
+                    <div class="feature-item">
+                        <i class="fas fa-user-md feature-icon"></i>
+                        <h3>Expert Doctors</h3>
+                        <p>Our team includes highly qualified specialists with years of experience in their respective fields.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <i class="fas fa-clock feature-icon"></i>
+                        <h3>24/7 Availability</h3>
+                        <p>Emergency services available round the clock with on-call doctors for urgent medical needs.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <i class="fas fa-hospital feature-icon"></i>
+                        <h3>Modern Facilities</h3>
+                        <p>State-of-the-art medical equipment and well-maintained facilities for accurate diagnosis and treatment.</p>
+                    </div>
+                    
+                    <div class="feature-item">
+                        <i class="fas fa-heart feature-icon"></i>
+                        <h3>Patient-Centric Care</h3>
+                        <p>We prioritize your comfort and well-being with personalized treatment plans and compassionate care.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Appointment Section -->
+        <section class="appointment" id="appointment">
+            <div class="container">
+                <h2>Need to See a Doctor?</h2>
+                <p>Book an appointment with our specialists today. We offer both in-person consultations and telemedicine options for your convenience.</p>
+                <a href="tel:+911234567890" class="cta-button" style="background-color: white; color: var(--primary);">Call Now: +91 123 456 7890</a>
+            </div>
+        </section>
+    </div>
+
+    <!-- Privacy Policy Page (Hidden by default) -->
+    <div id="privacy-policy" style="display: none;">
+        <div class="policy-container">
+            <div class="policy-header">
+                <h1>Privacy Policy</h1>
+                <p class="last-updated">Last Updated: October 15, 2023</p>
+            </div>
+            
+            <div class="policy-content">
+                <div class="policy-section">
+                    <h2>1. Introduction</h2>
+                    <p>Egaas Multi-Speciality Clinic ("we," "our," or "us") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, disclose, and safeguard your information when you visit our website or use our services. Please read this privacy policy carefully.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>2. Information We Collect</h2>
+                    <p>We may collect information about you in a variety of ways:</p>
+                    
+                    <h3>Personal Data</h3>
+                    <p>Personally identifiable information, such as your name, email address, phone number, and demographic information that you voluntarily give to us when you register with us or when you choose to participate in various activities related to our services.</p>
+                    
+                    <h3>Health Information</h3>
+                    <p>Medical history, current health conditions, treatment records, and other health-related information necessary for providing healthcare services.</p>
+                    
+                    <h3>Derivative Data</h3>
+                    <p>Information our servers automatically collect when you access our services, such as your IP address, browser type, operating system, access times, and the pages you have viewed directly before and after accessing our services.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>3. Use of Your Information</h2>
+                    <p>Having accurate information about you permits us to provide you with a smooth, efficient, and customized experience. Specifically, we may use information collected about you via our services to:</p>
+                    <ul>
+                        <li>Provide, operate, and maintain our healthcare services</li>
+                        <li>Process your appointments and manage your medical records</li>
+                        <li>Send you administrative information, such as updates, security alerts, and support messages</li>
+                        <li>Respond to your inquiries and offer support</li>
+                        <li>Request feedback and contact you about your use of our services</li>
+                        <li>Resolve disputes and troubleshoot problems</li>
+                        <li>Comply with legal obligations</li>
+                    </ul>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>4. Disclosure of Your Information</h2>
+                    <p>We may share information we have collected about you in certain situations:</p>
+                    
+                    <h3>By Law or to Protect Rights</h3>
+                    <p>If we believe the release of information about you is necessary to respond to legal process, to investigate or remedy potential violations of our policies, or to protect the rights, property, and safety of others, we may share your information as permitted or required by any applicable law, rule, or regulation.</p>
+                    
+                    <h3>Healthcare Providers</h3>
+                    <p>We may share your health information with other healthcare providers involved in your treatment, but only as necessary for your care and with your consent where required by law.</p>
+                    
+                    <h3>Third-Party Service Providers</h3>
+                    <p>We may share your information with third parties that perform services for us or on our behalf, including payment processing, data analysis, email delivery, hosting services, customer service, and marketing assistance.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>5. Security of Your Information</h2>
+                    <p>We use administrative, technical, and physical security measures to help protect your personal information. While we have taken reasonable steps to secure the personal information you provide to us, please be aware that despite our efforts, no security measures are perfect or impenetrable, and no method of data transmission can be guaranteed against any interception or other type of misuse.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>6. Policy for Children</h2>
+                    <p>We do not knowingly solicit information from or market to children under the age of 18. If we learn we have collected personal information from a child under age 18 without verification of parental consent, we will delete that information as quickly as possible.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>7. Changes to This Privacy Policy</h2>
+                    <p>We may update this Privacy Policy from time to time in order to reflect changes to our practices or for other operational, legal, or regulatory reasons. We will notify you of any changes by posting the new Privacy Policy on this page and updating the "Last Updated" date.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>8. Contact Us</h2>
+                    <p>If you have questions or comments about this Privacy Policy, please contact us at:</p>
+                    <p><strong>Egaas Multi-Speciality Clinic</strong><br>
+                    123 Medical Road, Dehradun, Uttarakhand 248001<br>
+                    Email: privacy@egaasclinic.com<br>
+                    Phone: +91 123 456 7890</p>
+                </div>
+                
+                <a href="#" class="back-button" onclick="showMainContent()">← Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms & Conditions Page (Hidden by default) -->
+    <div id="terms-conditions" style="display: none;">
+        <div class="policy-container">
+            <div class="policy-header">
+                <h1>Terms and Conditions</h1>
+                <p class="last-updated">Last Updated: October 15, 2023</p>
+            </div>
+            
+            <div class="policy-content">
+                <div class="policy-section">
+                    <h2>1. Acceptance of Terms</h2>
+                    <p>By accessing and using the services of Egaas Multi-Speciality Clinic ("the Clinic"), you accept and agree to be bound by the terms and provision of this agreement. In addition, when using these particular services, you shall be subject to any posted guidelines or rules applicable to such services.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>2. Medical Services</h2>
+                    <h3>2.1 Nature of Services</h3>
+                    <p>The Clinic provides medical consultation, diagnosis, treatment, and related healthcare services through qualified medical professionals. However, the information provided on our website or during teleconsultations is not intended to replace an in-person medical consultation.</p>
+                    
+                    <h3>2.2 Emergency Situations</h3>
+                    <p>Our services are not intended for emergency medical situations. In case of a medical emergency, please call your local emergency number immediately or visit the nearest emergency room.</p>
+                    
+                    <h3>2.3 No Guarantee of Results</h3>
+                    <p>While we strive to provide the highest quality medical care, we do not guarantee specific results from any treatment or procedure. Individual results may vary based on numerous factors.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>3. Appointments and Cancellations</h2>
+                    <h3>3.1 Booking Appointments</h3>
+                    <p>Appointments can be booked through our website, phone, or in-person at the clinic. All appointments are subject to availability of the healthcare provider.</p>
+                    
+                    <h3>3.2 Cancellation Policy</h3>
+                    <p>We require at least 24 hours notice for cancellation of appointments. Failure to provide adequate notice may result in a cancellation fee. Repeated cancellations or no-shows may result in restrictions on future bookings.</p>
+                    
+                    <h3>3.3 Late Arrivals</h3>
+                    <p>Patients arriving more than 15 minutes late for their appointment may be asked to reschedule or may receive a shortened consultation at the discretion of the healthcare provider.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>4. Fees and Payments</h2>
+                    <h3>4.1 Consultation Fees</h3>
+                    <p>Consultation fees vary based on the type of service and specialist. Current fees are displayed at the time of booking and are subject to change without prior notice.</p>
+                    
+                    <h3>4.2 Payment Methods</h3>
+                    <p>We accept cash, credit/debit cards, and online payments. Insurance claims are processed as per the terms of your insurance provider.</p>
+                    
+                    <h3>4.3 Refund Policy</h3>
+                    <p>Consultation fees are generally non-refundable once services have been rendered. Refunds for cancelled appointments will be processed as per our cancellation policy.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>5. Patient Responsibilities</h2>
+                    <p>As a patient of Egaas Multi-Speciality Clinic, you agree to:</p>
+                    <ul>
+                        <li>Provide accurate and complete information about your medical history and current health condition</li>
+                        <li>Follow the treatment plans and instructions provided by your healthcare provider</li>
+                        <li>Inform your healthcare provider of any changes in your health status</li>
+                        <li>Treat clinic staff and other patients with respect and courtesy</li>
+                        <li>Pay for services rendered in a timely manner</li>
+                        <li>Keep your appointment times or provide adequate notice for cancellations</li>
+                    </ul>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>6. Intellectual Property</h2>
+                    <p>All content included on this website, such as text, graphics, logos, images, and software, is the property of Egaas Multi-Speciality Clinic or its content suppliers and protected by international copyright laws. The compilation of all content on this site is the exclusive property of Egaas Multi-Speciality Clinic.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>7. Limitation of Liability</h2>
+                    <p>Egaas Multi-Speciality Clinic shall not be liable for any direct, indirect, incidental, special, or consequential damages that result from the use of, or inability to use, our services. This limitation applies whether the alleged liability is based on contract, tort, negligence, strict liability, or any other basis.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>8. Governing Law</h2>
+                    <p>These Terms and Conditions shall be governed by and construed in accordance with the laws of India. Any disputes relating to these terms and conditions will be subject to the exclusive jurisdiction of the courts of Dehradun, Uttarakhand.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>9. Changes to Terms</h2>
+                    <p>We reserve the right to modify these terms and conditions at any time. We will notify users of any changes by posting the new Terms and Conditions on this page and updating the "Last Updated" date.</p>
+                </div>
+                
+                <div class="policy-section">
+                    <h2>10. Contact Information</h2>
+                    <p>If you have any questions about these Terms and Conditions, please contact us at:</p>
+                    <p><strong>Egaas Multi-Speciality Clinic</strong><br>
+                    123 Medical Road, Dehradun, Uttarakhand 248001<br>
+                    Email: legal@egaasclinic.com<br>
+                    Phone: +91 123 456 7890</p>
+                </div>
+                
+                <a href="#" class="back-button" onclick="showMainContent()">← Back to Home</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-container">
+                <div class="footer-column">
+                    <h3>Egaas Clinic</h3>
+                    <p>Dehradun's premier multi-speciality healthcare provider, committed to delivering exceptional medical care to families since 2010.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#" onclick="showMainContent()">Home</a></li>
+                        <li><a href="#about" onclick="showMainContent()">About Us</a></li>
+                        <li><a href="#services" onclick="showMainContent()">Services</a></li>
+                        <li><a href="#" onclick="showPrivacyPolicy()">Privacy Policy</a></li>
+                        <li><a href="#" onclick="showTermsConditions()">Terms & Conditions</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> 123 Medical Road, Dehradun, Uttarakhand 248001</li>
+                        <li><i class="fas fa-phone"></i> +91 123 456 7890</li>
+                        <li><i class="fas fa-envelope"></i> info@egaasclinic.com</li>
+                        <li><i class="fas fa-clock"></i> Mon-Sat: 8AM-8PM, Sun: 9AM-1PM</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Egaas Multi-Speciality Clinic. All rights reserved.</p>
+                <p>Dehradun's Trusted Family Healthcare</p>
+                <div class="legal-links">
+                    <a href="#" onclick="showPrivacyPolicy()">Privacy Policy</a>
+                    <a href="#" onclick="showTermsConditions()">Terms & Conditions</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+        const navUl = document.querySelector('nav ul');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            navUl.style.display = navUl.style.display === 'flex' ? 'none' : 'flex';
+            if (navUl.style.display === 'flex') {
+                navUl.style.flexDirection = 'column';
+                navUl.style.position = 'absolute';
+                navUl.style.top = '100%';
+                navUl.style.left = '0';
+                navUl.style.width = '100%';
+                navUl.style.backgroundColor = 'white';
+                navUl.style.padding = '20px';
+                navUl.style.boxShadow = '0 10px 15px rgba(0,0,0,0.1)';
+                
+                // Add margin to li elements for mobile
+                const navItems = navUl.querySelectorAll('li');
+                navItems.forEach(item => {
+                    item.style.margin = '10px 0';
+                });
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        const navLinks = document.querySelectorAll('nav ul li a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navUl.style.display = 'none';
+                }
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Page navigation functions
+        function showPrivacyPolicy() {
+            document.getElementById('main-content').style.display = 'none';
+            document.getElementById('privacy-policy').style.display = 'block';
+            document.getElementById('terms-conditions').style.display = 'none';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Close mobile menu if open
+            if (window.innerWidth <= 768) {
+                navUl.style.display = 'none';
+            }
+        }
+        
+        function showTermsConditions() {
+            document.getElementById('main-content').style.display = 'none';
+            document.getElementById('privacy-policy').style.display = 'none';
+            document.getElementById('terms-conditions').style.display = 'block';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Close mobile menu if open
+            if (window.innerWidth <= 768) {
+                navUl.style.display = 'none';
+            }
+        }
+        
+        function showMainContent() {
+            document.getElementById('main-content').style.display = 'block';
+            document.getElementById('privacy-policy').style.display = 'none';
+             document.getElementById('terms-conditions').style.display = 'none';
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+            
+            // Close mobile menu if open
+            if (window.innerWidth <= 768) {
+                navUl.style.display = 'none';
+            }
+        }
+        
+        // Close mobile menu when clicking footer links
+        document.querySelectorAll('.footer-column a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navUl.style.display = 'none';
+                }
+            });
+        });
+        
+        // Close mobile menu when clicking legal links
+        document.querySelectorAll('.legal-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    navUl.style.display = 'none';
+                }
+            });
+        });
+        
+        // Handle initial page load - check for hash in URL
+        window.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash;
+            
+            if (hash === '#privacy-policy') {
+                showPrivacyPolicy();
+            } else if (hash === '#terms-conditions') {
+                showTermsConditions();
+            } else {
+                showMainContent();
+            }
+            
+            // Update URL without page reload for policy pages
+            document.querySelectorAll('a[onclick*="showPrivacyPolicy"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    history.pushState(null, null, '#privacy-policy');
+                });
+            });
+            
+            document.querySelectorAll('a[onclick*="showTermsConditions"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    history.pushState(null, null, '#terms-conditions');
+                });
+            });
+            
+            document.querySelectorAll('a[onclick*="showMainContent"]').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    history.pushState(null, null, '#home');
+                });
+            });
+            
+            // Handle browser back/forward buttons
+            window.addEventListener('popstate', function() {
+                const hash = window.location.hash;
+                
+                if (hash === '#privacy-policy') {
+                    showPrivacyPolicy();
+                } else if (hash === '#terms-conditions') {
+                    showTermsConditions();
+                } else {
+                    showMainContent();
+                    
+                    // Scroll to section if hash exists
+                    if (hash && hash !== '#') {
+                        const targetElement = document.querySelector(hash);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 80,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                }
+            });
+        });
+        
+        // Form validation for appointment booking (if form existed)
+        function validateAppointmentForm() {
+            const name = document.getElementById('patient-name').value;
+            const phone = document.getElementById('patient-phone').value;
+            const date = document.getElementById('appointment-date').value;
+            
+            if (!name || !phone || !date) {
+                alert('Please fill in all required fields.');
+                return false;
+            }
+            
+            if (phone.length < 10) {
+                alert('Please enter a valid phone number.');
+                return false;
+            }
+            
+            const selectedDate = new Date(date);
+            const today = new Date();
+            today.setHours(0, 0, 0, 0);
+            
+            if (selectedDate < today) {
+                alert('Please select a future date for your appointment.');
+                return false;
+            }
+            
+            alert('Appointment request submitted successfully! We will contact you shortly to confirm.');
+            return true;
+        }
+        
+        // Sample appointment booking modal (would be triggered by a button)
+        function showAppointmentModal() {
+            const modalHTML = `
+                <div id="appointment-modal" style="position:fixed; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.5); display:flex; justify-content:center; align-items:center; z-index:2000;">
+                    <div style="background:white; padding:30px; border-radius:10px; width:90%; max-width:500px; position:relative;">
+                        <button onclick="closeModal()" style="position:absolute; top:10px; right:10px; background:none; border:none; font-size:1.5rem; cursor:pointer;">&times;</button>
+                        <h2 style="color:var(--primary); margin-bottom:20px;">Book an Appointment</h2>
+                        <form onsubmit="return validateAppointmentForm()">
+                            <div style="margin-bottom:15px;">
+                                <label style="display:block; margin-bottom:5px; font-weight:500;">Full Name *</label>
+                                <input type="text" id="patient-name" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:5px;" required>
+                            </div>
+                            <div style="margin-bottom:15px;">
+                                <label style="display:block; margin-bottom:5px; font-weight:500;">Phone Number *</label>
+                                <input type="tel" id="patient-phone" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:5px;" required>
+                            </div>
+                            <div style="margin-bottom:15px;">
+                                <label style="display:block; margin-bottom:5px; font-weight:500;">Preferred Date *</label>
+                                <input type="date" id="appointment-date" style="width:100%; padding:10px; border:1px solid #ddd; border-radius:5px;" required>
+                            </div>
+                            <div style="margin-bottom:20px;">
+                                <label style="display:block; margin-bottom:5px; font-weight:500;">Department/Specialist</label>
+                                <select style="width:100%; padding:10px; border:1px solid #ddd; border-radius:5px;">
+                                    <option>General Consultation</option>
+                                    <option>Cardiology</option>
+                                    <option>Pediatrics</option>
+                                    <option>Orthopedics</option>
+                                    <option>Ophthalmology</option>
+                                    <option>Dentistry</option>
+                                </select>
+                            </div>
+                            <button type="submit" style="background-color:var(--primary); color:white; padding:12px 30px; border:none; border-radius:30px; cursor:pointer; font-weight:500; width:100%;">Submit Appointment Request</button>
+                        </form>
+                    </div>
+                </div>
+            `;
+            
+            document.body.insertAdjacentHTML('beforeend', modalHTML);
+        }
+        
+        function closeModal() {
+            const modal = document.getElementById('appointment-modal');
+            if (modal) {
+                modal.remove();
+            }
+        }
+        
+        // Add click handler to appointment buttons
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.cta-button').forEach(button => {
+                if (button.getAttribute('href') === '#appointment') {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        showAppointmentModal();
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
